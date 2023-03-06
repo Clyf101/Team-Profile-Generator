@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Team Roster</title>
-   
-  </head>
-  <body>
-    <header>
-      <h1>Team Roster</h1>
-    </header>
-    <main>
-      {{#each teamMembers}}
-      <section>
-        <h2>{{name}}</h2>
-        <h3>{{role}}</h3>
-        <ul>
-          <li>Employee ID: {{id}}</li>
-          <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
-          {{#if github}}
-          <li>GitHub: <a href="https://github.com/{{github}}" target="_blank">{{github}}</a></li>
-          {{/if}}
-          {{#if school}}
-          <li>School: {{school}}</li>
-          {{/if}}
-        </ul>
-      </section>
-      {{/each}}
-    </main>
-    <footer>
-      <!-- Add  footer content here -->
-    </footer>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Team</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark mb-5">
+    <span class="navbar-brand mb-0 h1 w-100 text-center">My Team</span>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4>John Smith</h4>
+            <h5>Manager</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item">ID: 1</li>
+              <li class="list-group-item">Email: <a href="mailto:john.smith@example.com">john.smith@example.com</a></li>
+              <li class="list-group-item">Office number: 123</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4>Jane Doe</h4>
+            <h5>Engineer</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item">ID: 2</li>
+              <li class="list-group-item">Email: <a href="mailto:jane.doe@example.com">jane.doe@example.com</a></li>
+              <li class="list-group-item">GitHub: <a href="https://github.com/janedoe" target="_blank">janedoe</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4>Bob Johnson</h4>
+            <h5>Intern</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item">ID: 3</li>
+              <li class="list-group-item">Email: <a href="mailto:bob.johnson@example.com">bob.johnson@example.com</a></li>
+              <li class="list-group-item">School: University of Example</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
