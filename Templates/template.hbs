@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Team</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark mb-5">
+    <span class="navbar-brand mb-0 h1 w-100 text-center">My Team</span>
+  </nav>
+  <div class="container">
+    <div class="row">
+      {{#each team}}
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4>{{this.getName()}}</h4>
+            <h5>{{this.getRole()}}</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item">ID: {{this.getId()}}</li>
+              <li class="list-group-item">Email: <a href="mailto:{{this.getEmail()}}">{{this.getEmail()}}</a></li>
+              {{#if this.getOfficeNumber}}
+              <li class="list-group-item">Office number: {{this.getOfficeNumber()}}</li>
+              {{/if}}
+              {{#if this.getGithub}}
+              <li class="list-group-item">GitHub: <a href="https://github.com/{{this.getGithub()}}" target="_blank">{{this.getGithub()}}</a></li>
+              {{/if}}
+              {{#if this.getSchool}}
+              <li class="list-group-item">School: {{this.getSchool()}}</li>
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</body>
+</html>
