@@ -3,7 +3,7 @@ const fs = require('fs');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const teamTemplate = require('./templates/teamTemplate');
+const teamTemplate = require('./Templates/template.hbs');
 
 const teamMembers = [];
 
@@ -30,6 +30,7 @@ const addManager = async () => {
       message: "What is the team manager's office number?",
     },
   ]);
+  
 
   const manager = new Manager(
     managerAnswers.name,
@@ -143,10 +144,10 @@ const addTeamMember = async () => {
   
       case 'Finish building my team':
         const renderedTeam = teamTemplate(teamMembers);
-        fs.writeFile('./dist/team.html', renderedTeam, (err) => {
+        fs.writeFile('./dist/index.html', renderedTeam, (err) => {
           if (err) throw err;
           console.log(
-            '\nSuccess! Your team page has been generated and saved to ./dist/team.html.\n'
+            '\nSuccess! Your team page has been generated and saved to ./dist/index.html.\n'
           );
         });
         break;
